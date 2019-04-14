@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+double INPUT (string JENIS){
+      double NILAI ;
+      cout<<" Input Nilai " << JENIS <<" : "; cin>>NILAI;
+      return NILAI;}
+
+double GRADE (float uts,float uas,float tugas,float absen){
+      if(uts*20/100+uas*30/100+tugas*35/100+absen*15/100 > 80)
+   cout<<"A";
+else if (uts*20/100+uas*30/100+tugas*35/100+absen*15/100 > 60)
+   cout<<"B";
+else if (uts*20/100+uas*30/100+tugas*35/100+absen*15/100 > 40)
+   cout<<"C";
+else if (uts*20/100+uas*30/100+tugas*35/100+absen*15/100 > 20)
+   cout<<"D";
+else
+   cout<<"E";
+}
+
+int main (){
+ struct NILAI{
+ int NILAI[4];
+ float nut,nas,nug,nab;};
+NILAI grade;
+cout<<" ---------- Perhitungan Indeks Nilai IPK ---------- ";cout<<endl;cout<<endl;
+grade.NILAI  [0] =INPUT ("UTS");
+grade.NILAI  [1]=INPUT ("UAS");
+grade.NILAI  [2] =INPUT ("TUGAS");
+grade.NILAI  [3]=INPUT ("ABSEN");
+
+cout<<grade.NILAI[0]*20/100;cout<<endl;
+cout<<grade.NILAI[1]*30/100;cout<<endl;
+cout<<grade.NILAI[2]*35/100;cout<<endl;
+cout<<grade.NILAI[3]*15/100;cout<<endl;
+
+
+cout<<" Hasil Akhir :";
+cout<<grade.NILAI[0]*20/100+grade.NILAI[1]*30/100+grade.NILAI[2]*35/100+grade.NILAI[3]*15/100;cout<<endl;
+cout<<" Indeks nilai :";
+GRADE(grade.NILAI[0],grade.NILAI[1],grade.NILAI[2],grade.NILAI[3]);
+
+return 0;
+}
